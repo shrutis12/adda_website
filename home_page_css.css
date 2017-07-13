@@ -1,0 +1,92 @@
+header{
+	/*border:1px solid black;*/
+}
+footer{
+	
+	height:20%;
+}
+#logo-div{
+	width:20%;
+	height: 100%;
+}
+#logo{
+
+	height:175%;
+	padding-right: 70px;
+	padding-left: 0px;
+
+}
+
+#caption{
+	
+	font-family: helvetica;
+	 /*position: bottom;*/
+	 color:black;
+	 animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    font-size: 12px;
+
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+#search_text_box{
+
+	display: inline;
+	margin-top: 20px;
+	margin-left: 100px;
+	align-self: center;
+	padding:6px;
+	width:300px;
+	border-radius: 8px;
+	border-radius-color: #0099cc;
+	font-family: helvetica;
+	
+}
+
+#myNavbar{
+	background-color: white;
+}
+
+#search_button{
+
+	padding: 7px;
+	background-color:   #0099cc;
+}
+
+#submitAd_button{
+	margin-left: 55px;
+	padding: 9px;
+	background-color:  #330066;
+	text-align: center;
+	font-family: helvetica;
+	border-radius: 8px;
+	width:200px;
+	font-size: 18px;
+	color: white;
+
+}
+
+#submitAd_button:hover{
+	background-color: white;
+	color: #330066;
+}
+
+#login_signup_button{
+	margin-left: 55px;
+	padding: 7px;
+	background-color:   #0099cc;
+}
+
+#model_header{
+	font-family: Helvetica;
+}
