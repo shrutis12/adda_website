@@ -1,0 +1,404 @@
+<html>
+<head>
+<title>SHOP WISE</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="home_page_css.css"/>
+ 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script  type="text/javascript" src="/examples/js/typeahead/0.11.1/typeahead.bundle.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // Defining the local dataset
+    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+    
+    // Constructing the suggestion engine
+    var cars = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: cars
+    });
+    
+    // Initializing the typeahead
+    $('.typeahead').typeahead({
+        hint: true,
+        highlight: true, /* Enable substring highlighting */
+        minLength: 1 /* Specify minimum characters required for showing result */
+    },
+    {
+        name: 'cars',
+        source: cars
+    });
+});  
+</script>
+
+<style type="text/css">
+    .bs-example{
+    	margin: 0px;
+    }
+ </style>
+
+
+</head>
+
+<body>
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" >
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="container" ">
+		<div class="navbar-header">
+       
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <figure>
+
+			 <a class="navbar-brand"><img id="logo" src="adda_logo.png"></img></a>
+             <figcaption id="caption"><i><b>The perfect hangout for all your Ads!</i></b></figcaption>
+            
+                </figure>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<!--<ul class="nav navbar-nav">
+				<li class="active"><a href="https://www.tutorialrepublic.com" target="_blank">Home</a></li>
+				<li><a href="https://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
+				<li><a href="https://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
+			</ul> -->
+			
+       <input id="search_text_box" type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Enter item to search">
+        <button id="search_button" type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+
+      <button id="submitAd_button">SUBMIT AN AD</button>
+      <button id="login_signup_button">Login/Sign Up</button>
+        
+		</div>
+
+	</div>
+</nav>
+
+<!--<header>
+<div id="header-left-div">
+India's Fastest Online Shopping Destination <br><br>
+<div id="logo-div">
+<img id="imglogo" src="logom.jpg" height="7%" width="15%" style="vertical-align: middle"></img>
+SHOP-WISE
+</div>
+</div>
+<div id="header-mid-div">
+<form>
+<input id="search" type="text" name="search" placeholder="enter item to search" >
+<a href="homepage.html"><input id="search_button" type="submit" value="Search"></a>
+
+</form>
+</div>
+
+<div id="header-right-div">
+<a href="" style="color:white;">Help Center</a>&nbsp&nbsp <a href="" style="color:white;"> Sell On ShopWise</a> 
+&nbsp&nbsp<a href="" style="color:white;">  Download App</a><br><br><br>
+<a href="homepage.html"><button id="cart_button">Cart </button></a>
+<div class="dropdown">
+	
+  <button class="dropbtn">Sign Up</button>
+  <div class="dropdown-content">
+    <a href="#">Login</a>
+    <a href="#">Register</a>
+  </div>
+</div>
+
+</div>
+</header> 
+
+<div class="main-div">
+<div class="row" >
+            <div class="col-md-2">
+            	<div class="demo-content">
+            		<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Sort by Brand</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> CLARISSE</label>
+                				<label><input type="checkbox"> CAPRISSE</label>
+                				<label><input type="checkbox"> BAGGIT</label>
+                				<label><input type="checkbox"> LOUIS VITTON</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Sort by Price</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> <1000</label>
+                				<label><input type="checkbox">1000-2000</label>
+                				<label><input type="checkbox"> 2000-3000</label>
+                				<label><input type="checkbox"> >3000</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Sort By Color</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> RED</label>
+                				<label><input type="checkbox"> BLUE</label>
+                				<label><input type="checkbox"> PINK</label>
+                				<label><input type="checkbox"> BLACK</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Sort By Discount</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> RED</label>
+                				<label><input type="checkbox"> BLUE</label>
+                				<label><input type="checkbox"> PINK</label>
+                				<label><input type="checkbox"> BLACK</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Sort By Customer Rating</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> RED</label>
+                				<label><input type="checkbox"> BLUE</label>
+                				<label><input type="checkbox"> PINK</label>
+                				<label><input type="checkbox"> BLACK</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Sort By ShopWise Rating</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> RED</label>
+                				<label><input type="checkbox"> BLUE</label>
+                				<label><input type="checkbox"> PINK</label>
+                				<label><input type="checkbox"> BLACK</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Sort By Color</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                     <div class="form-group">
+        				<div class="col-xs-offset-2 col-xs-10">
+            				<div class="checkbox">
+                				<label><input type="checkbox"> RED</label>
+                				<label><input type="checkbox"> BLUE</label>
+                				<label><input type="checkbox"> PINK</label>
+                				<label><input type="checkbox"> BLACK</label>
+            				</div>
+       					 </div>
+    				</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+</div>
+            	</div>
+            </div>
+            <div class="col-md-8">
+            	<div class="demo-content bg-alt">
+
+            <div class="col-md-4"><img src="handbag1.jpg ">
+            	<table>
+            		<tr>
+            			<td><i>Clarisse Blue</i></td>
+            		</tr>
+            		<tr>
+            			<td><i>Price:1200</i></td>
+            		</tr>
+            		<tr>
+            			<td><i>Rating:4.5</td></i></tr>
+            		</tr>
+            	</table>
+            </div>
+            <div class="col-md-4"><div class="container">
+  <img src="handbag1.jpg" alt="Avatar" class="image">
+  <div class="middle">
+    <div class="text">John Doe</div>
+  </div>
+</div></div>
+
+
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            <div class="col-md-4"><img src="handbag1.jpg "></div>
+            	<!--<center>
+            		<table id="collection_table">
+            			<tr>
+            			<td> <a href="handbag1.html">
+            			<div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<p><i>Price:1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div>
+						</td>
+            			<td> <a href="handbag1.html"><div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<p><i>Price:1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div></td>
+            			</tr>
+            			<tr>
+            			<td> <a href="handbag1.html"><div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<p><i>Price:1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div></td>
+            			<td> <a href="handbag1.html"><div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<p><i>Price:1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div></td>
+            			</tr>
+            			<tr>
+            			<td> <a href="handbag1.html"><div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<span class="glyphicon glyphicon-star"></span>
+		  						<p><i>1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div></td>
+            			<td> <a href="handbag1.html"><div class="wrapper">
+							<div id="nytimes" class="portfolio-thumbnail" >
+
+	  							<span class="text">
+		  						<p><i>Clarisse Blue Bag</i></p>
+		  						<p><i>Price:1200/-</i></p>
+	 							 </span>
+  								<img src="handbag1.jpg" alt="">
+						</div>
+						</div></td>
+            			</tr>
+            		</table>
+            		</center> 
+            	</div>
+            </div>
+            <div class="col-md-2">
+            	<div class="demo-content">.col-md-2</div>
+            </div>
+        </div>
+
+</div> -->
+
+
+
+<div class="row">
+		<div class="col-xs-12">
+			<footer>
+				<center><p>&copy; Copyright 2017 SHOPWISE</p><center>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
