@@ -12,44 +12,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script  type="text/javascript" src="/examples/js/typeahead/0.11.1/typeahead.bundle.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    // Defining the local dataset
-    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
-    
-    // Constructing the suggestion engine
-    var cars = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.whitespace,
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: cars
-    });
-    
-    // Initializing the typeahead
-    $('.typeahead').typeahead({
-        hint: true,
-        highlight: true, /* Enable substring highlighting */
-        minLength: 1 /* Specify minimum characters required for showing result */
-    },
-    {
-        name: 'cars',
-        source: cars
-    });
-});  
-</script>
 
-<style type="text/css">
-    .bs-example{
-    	margin: 0px;
-    }
- </style>
 
 
 </head>
 
 <body>
-<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" >
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" style="border:solid white;" >
 	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="container" ">
+	<div class="container">
 		<div class="navbar-header">
        
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
@@ -78,7 +49,26 @@ $(document).ready(function(){
       <span class="glyphicon glyphicon-search"></span> Search
 
       <button id="submitAd_button">SUBMIT AN AD</button>
-      <button id="login_signup_button">Login/Sign Up</button>
+      <button id="login_signup_button" data-toggle="modal" href="#my_modal">Login/Sign Up</button>
+        <div class="modal hide" id="my_modal">
+        <div class="modal-header">
+        jijij
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h3>Login to MyWebsite.com</h3>
+          </div>
+          <div class="modal-body">
+            <form method="post" action='' name="login_form">
+              <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
+              <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
+              <p><button type="submit" class="btn btn-primary">Sign in</button>
+                <a href="#">Forgot Password?</a>
+              </p>
+            </form>
+          </div>
+          <div class="modal-footer">
+            New To MyWebsite.com?
+            <a href="#" class="btn btn-primary">Register</a>
+          </div>
         
 		</div>
 
@@ -389,16 +379,17 @@ SHOP-WISE
             </div>
         </div>
 
-</div> -->
+</div> 
 
 
 
 <div class="row">
 		<div class="col-xs-12">
+        knjsdgjsnhjn
 			<footer>
-				<center><p>&copy; Copyright 2017 SHOPWISE</p><center>
+				<center><p> Copyright 2017 SHOPWISE</p><center>
 			</footer>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

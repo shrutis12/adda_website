@@ -2,7 +2,8 @@ header{
 	/*border:1px solid black;*/
 }
 footer{
-	background: #f2f2f2;
+	
+	height:20%;
 }
 #logo-div{
 	width:20%;
@@ -42,7 +43,7 @@ footer{
 
 	display: inline;
 	margin-top: 20px;
-	margin-left: 150px;
+	margin-left: 100px;
 	align-self: center;
 	padding:6px;
 	width:300px;
@@ -63,7 +64,7 @@ footer{
 }
 
 #submitAd_button{
-	margin-left: 50px;
+	margin-left: 55px;
 	padding: 9px;
 	background-color:  #330066;
 	text-align: center;
@@ -81,7 +82,11 @@ footer{
 }
 
 #login_signup_button{
-	margin-left: 20px;
+	margin-left: 55px;
 	padding: 7px;
 	background-color:   #0099cc;
+}
+
+#model_header{
+	font-family: Helvetica;
 }
