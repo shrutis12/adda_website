@@ -18,62 +18,300 @@
 </head>
 
 <body>
+<header>
 <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation" style="border:solid white;" >
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="container">
-		<div class="navbar-header">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
        
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <figure>
 
-			 <a class="navbar-brand"><img id="logo" src="adda_logo.png"></img></a>
+             <a class="navbar-brand"><img id="logo" src="adda_logo.png"></img></a>
              <figcaption id="caption"><i><b>The perfect hangout for all your Ads!</i></b></figcaption>
             
                 </figure>
-		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<!--<ul class="nav navbar-nav">
-				<li class="active"><a href="https://www.tutorialrepublic.com" target="_blank">Home</a></li>
-				<li><a href="https://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
-				<li><a href="https://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
-			</ul> -->
-			
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!--<ul class="nav navbar-nav">
+                <li class="active"><a href="https://www.tutorialrepublic.com" target="_blank">Home</a></li>
+                <li><a href="https://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
+                <li><a href="https://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
+            </ul> -->
+            
        <input id="search_text_box" type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Enter item to search">
         <button id="search_button" type="button" class="btn btn-info">
       <span class="glyphicon glyphicon-search"></span> Search
 
-      <button id="submitAd_button">SUBMIT AN AD</button>
-      <button id="login_signup_button" data-toggle="modal" href="#my_modal">Login/Sign Up</button>
-        <div class="modal hide" id="my_modal">
-        <div class="modal-header">
-        jijij
-            <button type="button" class="close" data-dismiss="modal">x</button>
-            <h3>Login to MyWebsite.com</h3>
-          </div>
-          <div class="modal-body">
-            <form method="post" action='' name="login_form">
-              <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
-              <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
-              <p><button type="submit" class="btn btn-primary">Sign in</button>
-                <a href="#">Forgot Password?</a>
-              </p>
-            </form>
-          </div>
-          <div class="modal-footer">
-            New To MyWebsite.com?
-            <a href="#" class="btn btn-primary">Register</a>
-          </div>
+      <button id="post_Ad_button" type="button" data-toggle="modal" data-target="#post_ad_modal">POST AN AD</button>
+      <button id="login_signup_button" class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#myModal">Login/Sign Up</button>
         
-		</div>
 
-	</div>
+    </div>
 </nav>
+</header>
+
+
+
+ 
+<div class="modal fade" id="post_ad_modal" role="dialog">
+    
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modal_header_tag" class="modal-title">Post your AD here!</h4>
+        </div>
+        <div class="modal-body">
+        <form id="post_Ad_Form" method="POST" action="/postAd/" novalidate="novalidate">
+                <div class="form-group">
+                     <label for="title" class="control-label">Product Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="" required="" title="" placeholder="example:laptop sale">
+                    
+                </div>
+                <div class="form-group">
+                     <label for="user_name" class="control-label">UserName</label>
+                    <input type="text" class="form-control" id="title" name="user_name" value="" required="" title="please enter your username" placeholder="">
+                    
+                </div>
+                 <div class="form-group">
+                     <label for="category" class="control-label">Category</label>
+                    <select class="form-control" id="category" name="category" value="" required="" title="" placeholder="Choose your Category">
+                     <option selected disabled hidden>Choose your Category</option>
+                    <option>Electronics</option>
+                    <option>Furniture</option>
+                    <option>Real Estate</option>
+                    <option>AutoMobiles</option>
+                    <option>Accesories</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group">
+                     <label for="description" class="control-label">Product Description</label>
+                    <textarea rows="5" cols="30" class="form-control" id="description" name="description" value="" required="" title="please enter a description for your product" placeholder=""></textarea>
+                    
+                </div>
+                <div class="form-group">
+                <label for="upload_images" class="control-label">Upload Product Images</label>
+                <input type="file" name="img[]" class="file">
+                    <div class="input-group col-xs-12" style="height:5%;">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                    
+                    <span class="input-group-btn">
+                    <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                    </span>
+                    </div>
+                </div>
+                <button id="post_button" type="submit" class="btn btn-success btn-block">Post AD</button>
+        </form>
+
+        </div>
+
+    </div>
+    
+   
+</div>
+</div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" class=>
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modal_header_tag" class="modal-title">Welcome to ADDA!</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+                  <div class="col-xs-6" >
+                       <p class="lead">Login</p>
+                      <div class="well" >
+                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter your username" placeholder="example@gmail.com">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                  </label>
+                                  <p class="help-block">(if this is a private computer)</p>
+                              </div>
+                              <button id="login_button" type="submit" class="btn btn-success btn-block">Login</button>
+                              <a href="/forgot/" class="">Forgot Password?</a>
+                               
+                          </form>
+                      </div>
+                      <button class="loginBtn loginBtn--facebook">Login with Facebook</button><br><br>
+
+                                <button class="loginBtn loginBtn--google">Login with Google</button>
+                                
+                  </div>
+
+                  <div class="col-xs-6" style="border-left: 1px solid gray;">
+                      <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                      <div class="well" style="">
+                       <form id="registration_form" method="POST" action="/register/" novalidate="novalidate">
+                       <div class="form-group">
+                       <label for="first_name" class="control-label">First Name</label>
+                                  <input type="text" class="form-control" id="first_name" name="first_name" value="" required="" title="Please enter your first name" placeholder="" style="height:30px;">
+                       </div>
+                       <div class="form-group">
+                       <label for="last_name" class="control-label">Last Name</label>
+                                  <input type="text" class="form-control" id="last_name" name="last_name" value="" required="" title="Please enter your last name" placeholder="" style="height:30px;">
+                       </div>
+                       <div class="form-group">
+                       <label for="user_name" class="control-label">UserName</label>
+                                  <input type="text" class="form-control" id="user_name" name="user_name" value="" required="" title="Please enter your prefered user name" placeholder="" style="height:30px;">
+                       </div>
+                       <div class="form-group">
+                                  <label for="emailId" class="control-label">Email ID</label>
+                                  <input type="text" class="form-control" id="emailid" name="emailid" value="" required="" title="Please enter your emailid" placeholder="example@gmail.com" style="height:30px;">
+                                  
+                        </div>
+                        <div class="form-group">
+                                  <label for="user_password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" id="user_password" name="user_password" value="" required="" title="Please enter your password(min.8 characters)" style="height:30px;">
+                                  
+                        </div>
+                        
+                        <div class="form-group">
+                       <label for="mobile_no" class="control-label">Mobile No.</label>
+                                  <input type="text" class="form-control" id="mobile_no" name="mobile_no" value="" required="" title="Please enter your 10 digit mobile no." placeholder="" style="height:30px;">
+                       </div>
+
+                       </form>
+                      </div>
+                      <!--<ul class="list-unstyled" style="line-height: 2">
+                          <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                          <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                          <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                          <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                          <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                          <li><a href="/read-more/"><u>Read more</u></a></li>
+                      </ul>-->
+                      <p><a href="/new-customer/" id="register_button" class="btn btn-info btn-block" >REGISTER NOW!</a></p>
+                  </div>
+              </div>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+
+
+<br><br><br><br>
+<div id="main-div" class=container>
+    <div class="row">
+    <div class="col-md-2" style="border:1px solid black;">
+    <div class="well">
+         <div class="panel-group" id="accordion" style="margin-top:10px;">
+        <div class="panel panel-default" >
+            <div class="panel-heading" style="background-color: #46b8da;">
+                <h4 class="panel-title">
+                   <a class="category_links" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Electronics</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: #46b8da;">
+                <h4 class="panel-title">
+                    <a class="category_links" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Furniture</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: #46b8da;">
+                <h4 class="panel-title">
+                    <a class="category_links" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Real Estate</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body" style="background-color: #46b8da;">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: #46b8da;">
+                <h4 class="panel-title">
+                    <a class="category_links" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Auto-Mobiles</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color: #46b8da;">
+                <h4 class="panel-title">
+                    <a class="category_links" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Accessories</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+        <div class="col-md-8" style="border:1px solid black;">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+        <div class="polaroid ad_images">
+            <img  src="https://www.motorbeam.com/wp-content/uploads/2010_Yamaha_YZF-R1_Wallpaper.jpg" alt="car" style="width:100%">
+                <div class="image_container">
+                <p>Yamaha bike</p>
+                </div>
+        </div>
+        </div>
+        </div>
+        </div><!--container ends-->
+        </div>
+        <div class="col-md-2" style="border:1px solid black;">
+        right
+    </div>
+
+    </div>
+</div>
+
+
+ </body>
+</html>
 
 <!--<header>
 <div id="header-left-div">
@@ -391,5 +629,3 @@ SHOP-WISE
 			</footer>
 		</div>
 	</div> -->
-</body>
-</html>
