@@ -1,0 +1,54 @@
+
+
+<div class="modal-dialog" >
+    <!-- Modal content-->
+    <div class="modal-content col-xs-offset-2 col-xs-8 ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal_header_tag" class="modal-title">Welcome to ADDA!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div>
+                       <p class="lead">Login</p>
+                        <div class="well" >
+                          <form #loginForm="ngForm"  novalidate="novalidate">
+                              <div class="form-group">
+                                  <label for="username" class="control-label">Username</label>
+                                  <input type="text" class="form-control" #username #nameModel="ngModel" name="username" value="" minlength="3"  title="Please enter your username" placeholder="example@gmail.com" required ngModel>
+                                  <div *ngIf="nameModel.errors && nameModel.touched" class="alert alert-danger">
+                                        <div [hidden]="!nameModel.errors.required">Please enter your name</div>
+                                        <div [hidden]="!nameModel.errors.minlength"> Name length should be minimum 3 characters </div>
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="control-label">Password</label>
+                                  <input type="password" class="form-control" #password #passwordModel="ngModel" name="password" minlength="3" value="" title="Please enter your password"  required ngModel>
+                                  <div *ngIf="passwordModel.errors && passwordModel.touched" class="alert alert-danger">
+                                        <div [hidden]="!passwordModel.errors.required">Please enter your password</div>
+                                        <div [hidden]="!passwordModel.errors.minlength"> Name length should be minimum 8 characters </div>
+                                    </div>
+                              </div>
+                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                              
+                              
+                               
+                          </form>
+                          
+                          <button [disabled]="!loginForm.form.valid"  id="login_button" type="submit" class="btn btn-success btn-block" (click)="onClick(username.value,password.value)" data-dismiss="modal">Login</button>
+                            <br>New User? <a href="/register"><u> Register here</u></a>
+                      </div>
+                        <button class="loginBtn loginBtn--facebook">Login with Facebook</button><br><br>
+
+                        <button class="loginBtn loginBtn--google">Login with Google</button>
+                                
+                    </div>
+                </div>
+            </div>
+       
+      </div>
+      
+    
+    
+</div>
+

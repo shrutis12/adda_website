@@ -1,0 +1,17 @@
+#post_button{
+	background-color: black;
+	border-color: black;
+	font-family: helvetica;
+	width:25%;
+	position: absolute;
+	right:    0;
+	bottom:   5px;
+	padding: 10px;
+}
+#post_button:hover{
+	background-color: white;
+	border-color: black;
+	color: black;
+	font-weight: bold;
+
+}

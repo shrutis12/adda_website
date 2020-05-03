@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row"> <br>
+
+<!-- col 6 start-->
+<div class="col-xs-5" style="border-left: 1px solid gray;">
+    <p class="lead">Register now for <span class="text-success">FREE</span></p>
+     <form #registrationForm="ngForm" (ngSubmit)="onClick(registrationForm.value)"  novalidate="novalidate">
+        <div class="well">
+        <div class="form-group">
+            <label for="first_name" class="control-label">First Name</label>
+            <input type="text" class="form-control"  name="first_name" value="" #firstNameRef="ngModel" required  minlength="3" ngModel title="Please enter your first name" placeholder="" style="height:30px;">
+            <div *ngIf="firstNameRef.errors && firstNameRef.touched" class="alert alert-danger">
+                <div [hidden]="!firstNameRef.errors.required">Please enter your first name</div>
+                <div [hidden]="!firstNameRef.errors.minlength">enter minimum 3 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="last_name" class="control-label">Last Name</label>
+            <input type="text" class="form-control" #lastNameRef="ngModel" name="last_name" value="" required minlength="3" ngModel title="Please enter your last name" placeholder="" style="height:30px;">
+             <div *ngIf="lastNameRef.errors && lastNameRef.touched" class="alert alert-danger">
+                <div [hidden]="!lastNameRef.errors.required">Please enter your last name</div>
+                <div [hidden]="!lastNameRef.errors.minlength">enter minimum 3 characters</div>
+            </div>
+         </div>
+        <div class="form-group">
+            <label for="user_name" class="control-label">UserName</label>
+            <input type="text" class="form-control" #userNameRef="ngModel" name="user_name" value="" required minlength="3" ngModel title="Please enter your prefered user name" placeholder="" style="height:30px;">
+             <div *ngIf="userNameRef.errors && userNameRef.touched" class="alert alert-danger">
+                <div [hidden]="!userNameRef.errors.required">Please enter your preferred username name</div>
+                <div [hidden]="!userNameRef.errors.minlength">enter minimum 3 characters</div>
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="emailId" class="control-label">Email ID</label>
+            <input type="email" class="form-control" #emailIdRef="ngModel" name="emailId" value="" required minlength="3" ngModel title="Please enter your emailid" placeholder="example@gmail.com" style="height:30px;">
+              <div *ngIf="emailIdRef.errors && emailIdRef.touched" class="alert alert-danger">
+                <div [hidden]="!emailIdRef.errors.required">Please enter your email id</div>
+                <div [hidden]="!emailIdRef.errors.minlength">enter minimum 3 characters</div>
+            </div>                     
+        </div>
+        <div class="form-group">
+            <label for="user_password" class="control-label">Password</label>
+            <input type="password" class="form-control" #userPasswordRef="ngModel" name="user_password" value="" required minlength="8" ngModel title="Please enter your password(min.8 characters)" style="height:30px;">
+             <div *ngIf="userPasswordRef.errors && userPasswordRef.touched" class="alert alert-danger">
+                <div [hidden]="!userPasswordRef.errors.required">Please enter your password</div>
+                <div [hidden]="!userPasswordRef.errors.minlength">enter minimum 8 characters</div>
+            </div>                    
+        </div>
+                        
+        <div class="form-group">
+             <label for="mobile_no" class="control-label">Mobile No.</label>
+             <input type="number" class="form-control" #mobileRef="ngModel" name="mobile_no" value="" required minlength="10" ngModel title="Please enter your 10 digit mobile no." placeholder="" style="height:30px;">
+              <div *ngIf="mobileRef.errors && mobileRef.touched" class="alert alert-danger">
+                <div [hidden]="!mobileRef.errors.required">Please enter your mobile no</div>
+                <div [hidden]="!mobileRef.errors.minlength">enter minimum 10 digits</div>
+            </div>
+        </div>
+
+        </div>
+        <div class="form-group">
+         <button [disabled]="!registrationForm.form.valid" id="register_button" type="submit" class="btn btn-info btn-block" >REGISTER NOW!</button>
+        </div>
+         </form>
+    
+                      
+   
+
+</div><!--register col 6 end-->
+    
+    
+    </div>
+</div>

@@ -1,0 +1,13 @@
+#register_button{
+	background-color: black;
+	border-color: black;
+	font-family: helvetica;
+	margin-top: 2px;
+    width:50%;
+}
+#register_button:hover{
+	background-color: white;
+	border-color: black;
+	color: black;
+	font-weight: bold;
+}

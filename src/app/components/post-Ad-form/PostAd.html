@@ -1,0 +1,55 @@
+ <div class="modal-dialog">
+
+      <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modal_header_tag" class="modal-title">Post your AD here!</h4>
+        </div>
+        <div class="modal-body">
+            <form #postAdForm="ngForm" (ngSubmit)="onSubmit(postAdForm.value)" novalidate>
+                <div class="form-group">
+                     <label for="title" class="control-label">Product Title</label>
+                    <input type="text" class="form-control" #titleRef #titleRefModel="ngModel" name="title"   placeholder="example:laptop sale" required ngModel>
+                     <div *ngIf="titleRefModel.errors && titleRefModel.touched" class="alert-danger" >
+                        Please enter title.
+                    </div>
+                </div>
+                <div class="form-group">
+                     <label for="user_name" class="control-label">Name</label>
+                    <input type="text" class="form-control" #nameRef #nameRefModel="ngModel" name="name"  title="please enter your username" placeholder="" required ngModel>
+                    <div *ngIf="nameRefModel.errors && nameRefModel.touched" class="alert-danger" >
+                        Please enter name.
+                    </div>
+                    
+                </div>
+                 <div class="form-group">
+                     <label for="category" class="control-label">Category</label>
+                    <select class="form-control" #categoryRef #categoryModelRef="ngModel"  name="category"  placeholder="Choose your Category" required ngModel>
+                     <option selected disabled hidden >choose your category</option>
+                    <option *ngFor="let cat of category">{{cat}}</option>
+                   <!-- <option>{{cat.name}}</option>
+                    <option>{{cat.name}}</option>
+                    <option>{{cat.name}}</option>-->
+                    
+                    </select>
+                    
+                </div>
+                <div class="form-group">
+                     <label for="description" class="control-label">Product Description</label>
+                    <textarea rows="5" cols="30" class="form-control" #descriptionRef #desriptionModelRef="ngModel"  name="description"  title="please enter a description for your product" placeholder="" required ngModel></textarea>
+                    <div *ngIf="desriptionModelRef.errors && desriptionModelRef.touched" class="alert-danger" >
+                        Please enter description.
+                    </div>
+                </div>
+                <br><br>
+                <button [disabled]="!postAdForm.form.valid" id="post_button" type="submit" class="btn btn-success btn-block" >Post AD</button>
+            </form>
+
+        </div>
+
+    </div>
+    
+   
+</div>
